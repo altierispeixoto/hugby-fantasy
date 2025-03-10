@@ -53,3 +53,6 @@ clean:
     @echo "Removing virtual environment..."
     rm -rf .venv
     @echo "Virtual environment removed."
+
+tunnel:
+    ngrok http http://192.168.68.60:1234

@@ -1,139 +1,45 @@
-# =============
-hugby-fantasy
-=============
+Build your team
+With a budget of $100 million, select your team of 15 players. Tap on a position or a player to open the player pool, then make your selections.
+
+Choose your Captain
+Pick your captain for each round to score double points! Tap on a player to select or swap your captain.
 
 
-## Quick Summary
-
-Decribe here the summary of the project.
-
-## Configuration
-
-This project uses [uv](https://github.com/astral-sh/uv) to manage python packages.  
-[Docker](https://www.docker.com/) is used to containerize the application.  
-[DVC](https://dvc.org/) is used to version the data and models.
-[Ruff](https://beta.ruff.rs/docs/configuration/) is used to lint the code.  
-[Pre-commit](https://pre-commit.com/) is used to run all pre-commit hooks, linting and formatting, cleaning notebooks and more.  
-
-## How to use
-
-```bash
-# 👇 Create a virtual environment
-uv venv
-
-# 👇 Activate the virtual environment
-source venv/bin/activate
-
-# 👇 Install the project
-uv sync 
-
-# 👇 Pre Commit
-pre-commit install &&
-    pre-commit autoupdate &&
-    pre-commit run -a -v
-```
-
-**1.1 Data Versioning with DVC**
+Boosters
+Earn more points and add even more excitement by using your Triple Captain, Limitless and Co-Captains boosters. Use them wisely, as each booster can only be used once throughout the season!
 
 
-All models and data used in this project are versioned using [DVC website](https://dvc.org/doc/start/data-management/data-pipelines) | [DVC repository](https://github.com/iterative/dvc).
-More info [DVC - Data Version Control](https://parrotanalytics.atlassian.net/wiki/spaces/DAT/pages/2373582850/DVC+-+Data+Version+Control)
+Score Points
+Earn points based on player performances in every game.
+
+Transfers
+Take advantage of unlimited transfers to ensure your team is perfectly set up for every round. Tweak your lineup right up until kick-off of every game throughout the season.
+
+Compete
+Play against friends, family and colleagues in private leagues, as well as in the overall leaderboard to show off your skills to other fans!
 
 
-**1.2 Store config in the environment**
+--- 
+
+## Rugby Positions Explained
+In rugby, each position demands a unique combination of physical and technical skills, and every player has specific responsibilities on the field.
 
 
-An app’s config is everything that is likely to vary between deploys (staging, production, developer environments, etc).
-This application follows the [twelve-factor](https://12factor.net/) metodology, thus, this application stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.
-
-This application follows [twelve-factor](https://12factor.net/) aspects, so create the .env file with the following environment variables for development purposes.
-Fill the username and passwords with your own.
-
-``` bash
-
-## .env
-APP_DATABASE_HOST=<HOST>
-APP_DATABASE_PORT=<PORT>
-APP_DATABASE_USERNAME=<USERNAME>
-APP_DATABASE_PASSWORD=<PASSWORD>
-APP_DATABASE=<DATABASE>
-```
-
-Run the following command to set up the envinoment variables from .env file created.
-
-```bash
-set -a
-source .env
-set +a
-```
-
-More info [Store config in the environment](https://12factor.net/config)
-
-**1.3 Conteinerized environment**
+### Forwards
+Every rugby team has 8 Forwards. Renowned as the workhorses of the team, Forwards will generally score Fantasy points for scrums, lineouts and defensive actions like making tackles.
 
 
----
-## How to run
-
-**2.0 Train model pipeline**
+### Fly Half
+The Fly Half is often the most influential player on the pitch, responsible for orchestrating a team’s attack and defence. Most Fly Halves are also great kickers, scoring Fantasy points for conversions and penalties.
 
 
-**2.1 Model validation**
-
-**2.2 Model versioning**
-
-With DVC properly configured, the models ready for production can be versioned following the steps bellow.
-Make sure that every new model and data pushed to production has a correspondent git tag.
-
-Steps:
-1. Commit the new model/data using dvc and git.
-  a) model and data: use `dvc push -r`
-  b) code: use `git push`
-2. Bump the version number located in /conf/params.yml
-3. Open a pull request to master branch.
-4. Merge master branch with new code and versioned model
-5. Create a new tag derived from master branch.
+### Half Back
+The Half Back is the team's heartbeat - making decisions, linking play, throwing key passes, and kicking accurately. Scrum Halves will often score Fantasy points for offloads, try assists and linebreaks.
 
 
-```bash
-git add .
-git commit -m "chore: Added mymodel.joblib model to dvc"
+### Midfielders
+Your Midfielders can play both inside and outside roles. They will score Fantasy points through line breaks and metres gained.
 
 
-git push
-# Pushing changes to REMOTE
-dvc push -r prod
-
-```
-
-**After merge with master branch.**
-
-```bash
-git tag -a X.Y.Z -m "message"
-git push -f origin X.Y.Z
-```
-
-
-**2.3 Prediction pipeline**
-
-The prediction pipeline was designed as the steps bellow.
-
----
-## Deployment instructions
-
-
-This project is deployed through <MY CI/CD TOOL>. Every git tag pushed to remote repository triggers the CI/CD pipeline.
-The CI/CD pipeline runs the following steps.
-
-> ! ALWAYS REMEMBER TO VERSION AND PUSH THE MODEL TO DVC REPOSITORY BEFORE GENERATING A NEW GIT TAG
-
-More info [12factor - build release run](https://12factor.net/build-release-run)
-
----
-### Who do I talk to? ###
-
-* Repo owner or admin:
-  - John Doe <john.doe@company.com>
-
-* Other community or team contact
-  - Jane Doe <jane.doe@company.com>
+### Back Three
+The Back Three are usually among the fastest players in any rugby team. They will be scoring a ton of Fantasy points through tries, linebreaks, try-saving tackles and metres gained!
